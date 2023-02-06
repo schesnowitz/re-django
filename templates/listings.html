@@ -1,12 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href='create-listing/'>Add a Listing</a>
 {% for listing in listings %}
-
-{{ listing.title }}
-
-
-
-
+<div class="card">
+    <h5 class="card-header">{{ listing.title }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ listing.address }}</h5>
+      <img src="{{ listing.image.url }}" alt="" class="rounded float-end">
+      <a href="/listings/{{listing.id}}/" class="btn btn-primary">Listing Details</a>
+    </div>
+  </div>
 
 
 
 
 {% endfor %}
+{% endblock content %}

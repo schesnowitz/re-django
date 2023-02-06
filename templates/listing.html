@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h5 class="card-header">{{ listing.title }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ listing.address }}</h5>
+        <p>Price: {{ listing.price }}</p>
+        <p>Address: {{ listing.address }}</p>
+        <p>Number of Berooms: {{ listing.num_bedrooms }}</p>
+        <p>Number of Bathrooms: {{ listing.num_bathrooms }}</p>
+        <img src="{{ listing.image.url }}" alt="" class="rounded float-end">
+<br>
+      <a href="/listings/{{listing.id}}/edit" class="btn btn-primary">Edit</a>
+      <a href="/listings/{{listing.id}}/delete" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+{% endblock content %}
